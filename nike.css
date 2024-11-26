@@ -1,0 +1,164 @@
+:root {
+  --main-color-1: black;
+  --main-color-2: yellow;
+  --main-color-3: white;
+  --main-color-4: gray;
+}
+
+body {
+  background-color: var(--main-color-1);
+  font-size: 22px;
+  line-height: 32px;
+  color: #ffffff;
+  word-wrap: break-word !important;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Logo SVG */
+.svg-logo, .svg-github, .svg-slack, .svg-twitter, .svg-open-collective {
+  fill: var(--main-color-2);
+}
+
+/* Titres */
+h1 {
+  font-size: 60px;
+  text-align: center;
+  color: #FFF;
+  margin-top: 100px;
+  font-family: 'Bree Serif', serif;
+}
+
+h3 {
+  font-size: 30px;
+  text-align: center;
+  color: #FFF;
+}
+
+h3 a {
+  color: #FFF;
+}
+
+a {
+  color: #ffffffdb;
+}
+
+#container {
+  margin: 0 auto;
+}
+
+p {
+  text-align: center;
+}
+
+/* Navigation */
+nav {
+  margin: 50px 0;
+}
+
+/* Menu principal */
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+
+/* Items de menu */
+nav ul li {
+  display: inline-block;
+  background-color: transparent;
+  position: relative; /* Nécessaire pour les sous-menus */
+}
+
+/* Liens de menu */
+nav a {
+  display: inline-block;
+  padding: 20px ; 
+  margin: ;
+  color: var(--main-color-1);
+  font-size: 20px;
+  line-height: 60px;
+  color: var(--main-color-3);
+  text-decoration: none;
+  border-radius: 8px;
+  margin: 5px 0;
+}
+
+/* Effet au survol des liens */
+nav a:hover {
+  background-color: #ffffffb6;
+  color: var(--main-color-1);
+  border-radius: 8px;
+}
+
+/* Gestion du sous-menu (caché par défaut) */
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background-color: #212121;
+  border-radius: 8px; 
+}
+
+/* Affichage du sous-menu au survol */
+nav ul li:hover > ul {
+  display: block; 
+}
+
+/* Items du sous-menu */
+nav ul ul li {
+  width: 170px; 
+  display: block; 
+  position: relative;
+}
+
+/* Sous-menu de niveaux supérieurs (tiers suivants) */
+nav ul ul ul li {
+  top: 0;
+  left: 170px; 
+}
+
+/* Enlever la flèche sur l'élément "Accueil" */
+nav ul > li:first-child > a:after {
+  content: none;
+}
+
+/* Gestion du header */
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Changer le symbole du dropdown en flèche vers le bas */
+li > a {
+  position: relative; /* Permet de positionner la flèche par rapport au lien */
+  padding-right: 15px;
+}
+
+li > a:after {
+  content: ''; 
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #000;
+  position: absolute; /* Positionne la flèche sans affecter les autres éléments */
+  right: 0; /* Place la flèche à droite du lien */
+  top: 50%; /* Centre verticalement la flèche par rapport au texte */
+  transform: translateY(-50%); /* Correction de l'alignement vertical */
+}
+
+li > a:only-child:after {
+  content: ''; /* Si un seul enfant, pas de flèche */
+}
+
+.wall {
+  width: 100%;
+}
