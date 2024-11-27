@@ -1,22 +1,13 @@
-/* ===== Font Imports ===== */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url(https://fonts.googleapis.com/css?family=Bree+Serif);
 
-/* ===== CSS Custom Properties ===== */
 :root {
-    /* Color palette */
     --main-color-1: black;
     --main-color-2: yellow;
     --main-color-3: white;
     --main-color-4: gray;
-    
-    /* Common values */
-    --border-radius: 8px;
-    --standard-padding: 20px;
-    --menu-item-width: 170px;
 }
 
-/* ===== Reset & Base Styles ===== */
 * {
     margin: 0;
     padding: 0;
@@ -44,7 +35,6 @@ h1 {
     font-family: 'Bree Serif', serif;
 }
 
-/* ===== SVG Icons ===== */
 .svg-logo,
 .svg-github,
 .svg-slack,
@@ -53,12 +43,12 @@ h1 {
     fill: var(--main-color-3);
 }
 
-/* ===== Layout ===== */
+
 #container {
     margin: 0 auto;
 }
 
-/* Header */
+/* ===== HEADER ===== */
 header {
     display: flex;
     flex-direction: row;
@@ -75,7 +65,6 @@ header {
     right: 120px;
 }
 
-/* Navigation */
 nav {
     margin: 50px 0;
 }
@@ -100,20 +89,23 @@ nav a {
     line-height: 60px;
 }
 
-/* Dropdown Menu */
+.menuNav ul li a {
+    font-size: 0.9rem;
+}
+
 nav ul ul {
     display: none;
     position: absolute;
     top: 65px;
 }
 
-nav ul li:hover > ul {
+nav ul li:hover>ul {
     display: inherit;
-    border-radius: var(--border-radius);
+    border-radius: 8px;
 }
 
 nav ul ul li {
-    width: var(--menu-item-width);
+    width: 170px;
     float: none;
     display: list-item;
     position: relative;
@@ -122,346 +114,44 @@ nav ul ul li {
 
 nav ul ul ul li {
     position: relative;
-    left: var(--menu-item-width);
+    left: 170px;
 }
 
-/* Navigation Links */
 li a {
-    padding: 0 var(--standard-padding);
-    margin: 8px 0;
+    padding-left: 20px;
+    padding-right: -10px;
+    margin-top: 8px;
+    margin-bottom: 12px;
     background-color: rgba(255, 255, 255, 0.685);
-    border-radius: var(--border-radius);
+    border-radius: 8px;
 }
 
-.home {
-    background-color: var(--main-color-3);
-    color: var(--main-color-1);
-}
-
-li > a:after {
-    content: ' ▾';
-}
-
-li > a:only-child:after {
-    content: '';
-}
-
-/* Main Content */
-.deco {
-    display: block;
-    line-height: 0;
-    font-size: 0;
-}
-
-.wall,
-.promo {
-    width: 100%;
-    display: block;
-    margin: 0;
-    padding: 0;
-}
-
-.promo {
-    background-color: var(--main-color-2);
-    padding: var(--standard-padding);
-    font-weight: bold;
-    color: var(--main-color-1);
-    text-align: center;
-    line-height: 1.2;
-    font-size: 1rem;
-}
-
-/* Product Gallery */
-.selection {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0;
-    margin: 0;
-    padding: 0;
-}
-
-.shoeItem {
-    position: relative;
-    background-color: var(--main-color-3);
-    flex: 0 0 calc(33.333% - 2px);
-    overflow: hidden;
-}
-
-.shoeItem img {
-    object-fit: cover;
-    width: 100%;
-    display: block;
-}
-
-/* Price and Label Tags */
-.price,
-.label {
-    position: absolute;
-    background-color: var(--main-color-2);
-    color: black;
-    font-size: 16px;
-    font-weight: bolder;
-    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.8);
-}
-
-.price {
-    top: 55px;
-    left: 25px;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: rotate(-8deg);
-}
-
-.label {
-    top: 65px;
-    left: 180px;
-    padding: 8px 25px;
-    transform: rotate(13deg);
-}
-
-/* Footer */
-.footer {
-    display: flex;
-    width: 100%;
-}
-
-.footer-logo {
-    background-color: var(--main-color-2);
-    width: calc(100% / 3);
-    padding: var(--standard-padding);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer-logo svg {
-    filter: invert(1);
-    width: 200px;
-    height: auto;
-}
-
-.slogan {
-    background-color: var(--main-color-1);
-    color: var(--main-color-2);
-    width: calc(100% * 2/3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    font-size: 2rem;
-    letter-spacing: 1.5px;
-    padding: var(--standard-padding);
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) and (min-width: 600px) {
-    .shoeItem {
-        flex: 0 0 calc(50% - 2px);
-    }
-    
-    .logo svg {
-        width: 200px;
-        right: 60px;
-    }
-    
-    h1 {
-        font-size: 48px;
-    }
-}
-
-@media (max-width: 600px) {
-    .shoeItem {
-        flex: 0 0 100%;
-    }
-    
-    .footer {
-        flex-direction: column;
-    }
-    
-    .footer-logo,
-    .slogan {
-        width: 100%;
-    }
-    
-    header {
-        flex-direction: column;
-    }
-    
-    .logo svg {
-        right: 0;
-    }
-    
-    nav ul li {
-        display: block;
-        text-align: center;
-    }
-    
-    nav ul ul {
-        position: static;
-    }
-}/* ===== Font Imports ===== */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
-
-/* ===== CSS Custom Properties ===== */
-:root {
-    /* Color palette */
-    --main-color-1: black;
-    --main-color-2: yellow;
-    --main-color-3: white;
-    --main-color-4: gray;
-    
-    /* Common values */
-    --border-radius: 8px;
-    --standard-padding: 20px;
-    --menu-item-width: 170px;
-}
-
-/* ===== Reset & Base Styles ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: var(--main-color-1);
-    font-size: 22px;
-    line-height: 32px;
-    color: var(--main-color-3);
-    word-wrap: break-word !important;
-    font-family: 'Open Sans', sans-serif;
-}
-
-a {
-    color: var(--main-color-3);
-    text-decoration: none;
-}
-
-h1 {
-    margin-top: 100px;
-    text-align: center;
-    font-size: 60px;
-    font-family: 'Bree Serif', serif;
-}
-
-/* ===== SVG Icons ===== */
-.svg-logo,
-.svg-github,
-.svg-slack,
-.svg-twitter,
-.svg-open-collective {
-    fill: var(--main-color-3);
-}
-
-/* ===== Layout ===== */
-#container {
-    margin: 0 auto;
-}
-
-/* Header */
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding-left: 15px;
-    margin: 15px;
-}
-
-.logo svg {
-    width: 250px;
-    height: auto;
-    position: relative;
-    right: 120px;
-}
-
-/* Navigation */
-nav {
-    margin: 50px 0;
-}
-
-nav ul {
-    padding: 10px;
-    margin: 0;
-    list-style: none;
-    position: relative;
-}
-
-nav ul li {
-    display: inline-block;
+.cat {
     background-color: transparent;
 }
 
-nav a {
-    display: block;
-    margin: 15px;
-    color: var(--main-color-3);
-    font-size: 20px;
-    line-height: 60px;
-}
-
-/* Dropdown Menu */
-nav ul ul {
-    display: none;
-    position: absolute;
-    top: 65px;
-}
-
-nav ul li:hover > ul {
-    display: inherit;
-    border-radius: var(--border-radius);
-}
-
-nav ul ul li {
-    width: var(--menu-item-width);
-    float: none;
-    display: list-item;
-    position: relative;
-    top: 3px;
-}
-
-nav ul ul ul li {
-    position: relative;
-    left: var(--menu-item-width);
-}
-
-/* Navigation Links */
-li a {
-    padding: 0 var(--standard-padding);
-    margin: 8px 0;
-    background-color: rgba(255, 255, 255, 0.685);
-    border-radius: var(--border-radius);
-}
-
 .home {
+    padding: 0 20px;
     background-color: var(--main-color-3);
     color: var(--main-color-1);
 }
 
-li > a:after {
+li>a:after {
     content: ' ▾';
 }
 
-li > a:only-child:after {
+li>a:only-child:after {
     content: '';
 }
 
-/* Main Content */
+/* ===== MAIN CONTENT ===== */
 .deco {
     display: block;
     line-height: 0;
     font-size: 0;
 }
 
-.wall,
-.promo {
+.wall {
     width: 100%;
     display: block;
     margin: 0;
@@ -470,15 +160,17 @@ li > a:only-child:after {
 
 .promo {
     background-color: var(--main-color-2);
-    padding: var(--standard-padding);
+    padding: 20px;
     font-weight: bold;
     color: var(--main-color-1);
     text-align: center;
+    width: 100%;
+    display: block;
+    margin: 0;
     line-height: 1.2;
     font-size: 1rem;
 }
 
-/* Product Gallery */
 .selection {
     display: flex;
     flex-wrap: wrap;
@@ -492,6 +184,8 @@ li > a:only-child:after {
     position: relative;
     background-color: var(--main-color-3);
     flex: 0 0 calc(33.333% - 2px);
+    padding: 0;
+    margin: 0;
     overflow: hidden;
 }
 
@@ -501,37 +195,60 @@ li > a:only-child:after {
     display: block;
 }
 
-/* Price and Label Tags */
-.price,
-.label {
-    position: absolute;
-    background-color: var(--main-color-2);
-    color: black;
-    font-size: 16px;
-    font-weight: bolder;
-    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.8);
-}
-
 .price {
+    position: absolute;
     top: 55px;
     left: 25px;
     width: 90px;
     height: 90px;
+    background-color: var(--main-color-2);
+    color: #000;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
     transform: rotate(-8deg);
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.8);
 }
 
 .label {
+    position: absolute;
     top: 65px;
     left: 180px;
+    background-color: var(--main-color-2);
+    color: black;
     padding: 8px 25px;
+    font-size: 16px;
+    font-weight: bolder;
     transform: rotate(13deg);
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.8);
 }
 
-/* Footer */
+.label::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translate(2px, 2px);
+    z-index: -1;
+}
+
+.shoe {
+    width: 100%;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.shoe:hover {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+}
+
+/* ===== FOOTER ===== */
 .footer {
     display: flex;
     width: 100%;
@@ -540,7 +257,7 @@ li > a:only-child:after {
 .footer-logo {
     background-color: var(--main-color-2);
     width: calc(100% / 3);
-    padding: var(--standard-padding);
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -563,53 +280,368 @@ li > a:only-child:after {
     font-weight: bold;
     font-size: 2rem;
     letter-spacing: 1.5px;
-    padding: var(--standard-padding);
+    padding: 20px;
 }
 
-/* Responsive Design */
+/*******************************************/
+/*******************************************/
+/*******************************************/
+
+
 @media (max-width: 1024px) and (min-width: 600px) {
+
+    body,
+    html {
+        font-size: 16px;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        gap: 0;
+    }
+
+    .menu {
+        order: 1;
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        background-color: var(--main-color-2);
+        padding: 15px 0;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu s {
+        color: var(--main-color-1);
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .logo {
+        order: 2;
+    }
+
+    .logo svg {
+        fill: var(--main-color-2);
+        width: 100px;
+        left: 1px;
+        padding-top: 20px;
+    }
+
+    nav a {
+        line-height: 39px;
+    }
+
+    .menuNav {
+        order: 3;
+        width: 100%;
+        margin: 0;
+    }
+
+    .logo .svg-logo {
+        fill: yellow;
+    }
+
+    .menu .svg-github,
+    .menu .svg-twitter,
+    .menu .svg-slack,
+    .menu .svg-open-collective {
+        fill: black;
+        width: 20px;
+    }
+
+    nav {
+        margin: 5px;
+    }
+
+    .menu {
+       
+        justify-content: space-evenly;
+        padding: 10px;
+        border-radius: 0;
+    }
+
+    .menu .size-icon {
+        width: 15px;
+        height: auto;
+        filter: var(--main-color-1);
+    }
+
+    .menuNav ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    .cat {
+        margin: 0;
+        height: 35px;
+
+    }
+
+    .menuNav ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+
+
+    .menuNav ul li a {
+        font-size: 10px;
+
+        display: block;
+        align-items: end;
+    }
+
+    .menuNav .home {
+        background-color: yellow;
+        border-radius: 4px;
+    }
+
+    .menuNav nav ul>li>ul>li>a {
+        display: none;
+    }
+
+    /*******************************************/
+
+    .promo {
+        font-size: 1.2rem;
+    }
+
+    .wall {
+        display: none;
+    }
+
+    .price {
+        top: 35px;
+        left: 35px;
+        width: 90px;
+        height: 90px;
+        font-weight: bold;
+        font-size: 16px;
+      
+    }
+    
+    .label {
+        top: 40px;
+        left: 180px;
+        padding: 8px 25px;
+        font-size: 16px;
+        font-weight: bolder;
+    }
     .shoeItem {
         flex: 0 0 calc(50% - 2px);
     }
-    
-    .logo svg {
-        width: 200px;
-        right: 60px;
+
+    footer {
+        flex-direction: column;
     }
-    
-    h1 {
-        font-size: 48px;
+
+    .footer-logo {
+        width: 100%;
+        height: 100px;
+    }
+
+    .footer-logo svg {
+        width: 100px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .slogan {
+        width: 100%;
+        height: 100px;
+        font-size: 1.5rem;
+        padding: 10px;
     }
 }
 
+/*******************************************/
+/*******************************************/
+/*******************************************/
+
 @media (max-width: 600px) {
-    .shoeItem {
-        flex: 0 0 100%;
+
+    body,
+    html {
+        font-size: 14px;
+        padding: 0;
+        margin: 0 auto;
     }
-    
-    .footer {
-        flex-direction: column;
-    }
-    
-    .footer-logo,
-    .slogan {
-        width: 100%;
-    }
-    
+
     header {
         flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        gap: 0;
     }
-    
+
+    .menu {
+        order: 1;
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        background-color: var(--main-color-2);
+        padding: 15px 0;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu s {
+        color: var(--main-color-1);
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .logo {
+        order: 2;
+    }
+
     .logo svg {
-        right: 0;
+        fill: var(--main-color-2);
+        width: 100px;
+        left: 1px;
+        padding-top: 20px;
     }
-    
-    nav ul li {
+
+    nav a {
+        line-height: 39px;
+    }
+
+    .menuNav {
+        order: 3;
+        width: 100%;
+        margin: 0;
+    }
+
+    .logo .svg-logo {
+        fill: yellow;
+    }
+
+    .menu .svg-github,
+    .menu .svg-twitter,
+    .menu .svg-slack,
+    .menu .svg-open-collective {
+        fill: black;
+        width: 20px;
+    }
+
+    nav {
+        margin: 5px;
+    }
+
+    .menu {
+       
+        justify-content: space-evenly;
+        padding: 10px;
+        border-radius: 0;
+    }
+
+    .menu .size-icon {
+        width: 15px;
+        height: auto;
+        filter: var(--main-color-1);
+    }
+
+    .menuNav ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    .cat {
+        margin: 0;
+        height: 35px;
+
+    }
+
+    .menuNav ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+
+
+    .menuNav ul li a {
+        font-size: 10px;
+
         display: block;
-        text-align: center;
+        align-items: end;
     }
-    
-    nav ul ul {
-        position: static;
+
+    .menuNav .home {
+        background-color: yellow;
+        border-radius: 4px;
+    }
+
+    .menuNav nav ul>li>ul>li>a {
+        display: none;
+    }
+
+    /*******************************************/
+
+    .promo {
+        font-size: 1.2rem;
+    }
+
+    .wall {
+        display: none;
+    }
+
+    .selection {
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .price {
+
+        top: 20px;
+        left: 35px;
+        width: 60px;
+        height: 60px;
+        font-size: 13px;
+    }
+
+    .label {
+
+        top: 35px;
+        left: 150px;
+        height: 45px;
+        padding-bottom: 10px;
+        font-size: 14px;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    .footer-logo {
+        width: 100%;
+        height: 100px;
+    }
+
+    .footer-logo svg {
+        width: 100px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .slogan {
+        width: 100%;
+        height: 100px;
+        font-size: 1.5rem;
+        padding: 10px;
     }
 }
