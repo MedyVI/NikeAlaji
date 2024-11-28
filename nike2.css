@@ -287,361 +287,456 @@ li>a:only-child:after {
 /*******************************************/
 /*******************************************/
 
+    @media (max-width: 1024px) {
 
-@media (max-width: 1024px) and (min-width: 600px) {
+        body,
+        html {
+            font-size: 16px;
+            padding: 0;
+            margin: 0 auto;
+        }
 
-    body,
-    html {
-        font-size: 16px;
-        padding: 0;
-        margin: 0 auto;
+        header {
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            gap: 0;
+        }
+
+        .menu {
+            order: 1;
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            background-color: var(--main-color-2);
+            padding: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu s {
+            color: var(--main-color-1);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .logo {
+            order: 2;
+        }
+
+        .logo svg {
+            fill: var(--main-color-2);
+            width: 100px;
+            left: 1px;
+            padding-top: 20px;
+        }
+
+        nav a {
+            line-height: 15px;
+        }
+
+        .menuNav {
+            order: 3;
+            width: 100%;
+            margin: 0;
+        }
+
+        .logo .svg-logo {
+            fill: yellow;
+        }
+
+        .menu .svg-github,
+        .menu .svg-twitter,
+        .menu .svg-slack,
+        .menu .svg-open-collective {
+            fill: black;
+            width: 20px;
+        }
+
+        nav {
+            margin: 5px;
+        }
+
+        .menu {
+            justify-content: space-evenly;
+            padding: 10px;
+            border-radius: 0;
+        }
+
+        .menu .size-icon {
+            width: 15px;
+            height: auto;
+            filter: var(--main-color-1);
+        }
+
+        .menuNav ul {
+            display: flex;
+            flex-direction: column;
+            /* Empile les items en colonne */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menuNav ul li {
+            position: relative;
+            /* display: block; */
+            /* Chaque élément occupe toute la largeur */
+            width: 100%;
+        }
+
+        .menuNav ul li a {
+            display: block;
+            font-size: 1rem;
+            padding: 10px 20px;
+            color: var(--main-color-3);
+            border-radius: 5px;
+            margin-bottom: 5px;
+            text-align: start;
+        }
+
+        .menuNav ul li:hover>a {
+            background-color: var(--main-color-4);
+            color: var(--main-color-3);
+        }
+
+        .menuNav ul li ul {
+            display: none;
+            /* Sous-menus masqués par défaut */
+            position: relative;
+            /* Position relative aux parents */
+            top: auto;
+            left: 0;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .menuNav ul li:hover>ul {
+            display: block;
+            /* Affichage des sous-menus au survol */
+            padding: 0;
+        }
+
+        .menuNav ul li ul li {
+            display: block;
+            /* Les sous-menus s'empilent */
+            width: 100%;
+        }
+
+        .menuNav ul li ul li a {
+            padding: 10px;
+            color: var(--main-color-3);
+            background-color: transparent;;
+            border-radius: 4px;
+            display: block;
+        }
+
+        .menuNav ul li ul li a:hover {
+            background-color: var(--main-color-4);
+            color: var(--main-color-3);
+        }
+
+        .menuNav ul li ul ul {
+            position: relative;
+            /* Ajustement pour sous-sous-menus */
+            left: auto;
+            top: auto;
+            margin-top: 5px;
+        }
+
+        .cat {
+            margin: 0;
+          
+        }
+
+        .menuNav .home {
+            background-color: yellow;
+            color: var(--main-color-1);
+            border-radius: 4px;
+        }
+
+        .promo {
+            font-size: 1.2rem;
+        }
+
+        .wall {
+            display: none;
+        }
+
+        .price {
+            top: 35px;
+            left: 35px;
+            width: 90px;
+            height: 90px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .label {
+            top: 40px;
+            left: 180px;
+            padding: 8px 25px;
+            font-size: 16px;
+            font-weight: bolder;
+        }
+
+        .shoeItem {
+            flex: 0 0 calc(50% - 2px);
+        }
+
+        footer {
+            flex-direction: column;
+        }
+
+        .footer-logo {
+            width: 100%;
+            height: 100px;
+        }
+
+        .footer-logo svg {
+            width: 100px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .slogan {
+            width: 100%;
+            height: 100px;
+            font-size: 1.5rem;
+            padding: 10px;
+        }
     }
 
-    header {
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        margin: 0;
-        gap: 0;
-    }
-
-    .menu {
-        order: 1;
-        display: flex;
-        justify-content: space-evenly;
-        width: 100%;
-        background-color: var(--main-color-2);
-        padding: 15px 0;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .menu s {
-        color: var(--main-color-1);
-        font-weight: bold;
-        font-size: 1.2rem;
-    }
-
-    .logo {
-        order: 2;
-    }
-
-    .logo svg {
-        fill: var(--main-color-2);
-        width: 100px;
-        left: 1px;
-        padding-top: 20px;
-    }
-
-    nav a {
-        line-height: 39px;
-    }
-
-    .menuNav {
-        order: 3;
-        width: 100%;
-        margin: 0;
-    }
-
-    .logo .svg-logo {
-        fill: yellow;
-    }
-
-    .menu .svg-github,
-    .menu .svg-twitter,
-    .menu .svg-slack,
-    .menu .svg-open-collective {
-        fill: black;
-        width: 20px;
-    }
-
-    nav {
-        margin: 5px;
-    }
-
-    .menu {
-       
-        justify-content: space-evenly;
-        padding: 10px;
-        border-radius: 0;
-    }
-
-    .menu .size-icon {
-        width: 15px;
-        height: auto;
-        filter: var(--main-color-1);
-    }
-
-    .menuNav ul {
-        display: flex;
-        flex-direction: column;
-    }
-
-
-
-    .cat {
-        margin: 0;
-        height: 35px;
-
-    }
-
-    .menuNav ul {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-    }
-
-
-
-    .menuNav ul li a {
-        font-size: 10px;
-
-        display: block;
-        align-items: end;
-    }
-
-    .menuNav .home {
-        background-color: yellow;
-        border-radius: 4px;
-    }
-
-    .menuNav nav ul>li>ul>li>a {
-        display: none;
-    }
 
     /*******************************************/
+    /*******************************************/
+    /*******************************************/
 
-    .promo {
-        font-size: 1.2rem;
-    }
+    @media (max-width: 600px) {
+        body,
+        html {
+            font-size: 14px;
+            padding: 0;
+            margin: 0 auto;
+        }
+    
+        header {
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            gap: 0;
+        }
+    
+        .menu {
+            order: 1;
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            background-color: var(--main-color-2);
+            padding: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    
+        .menu s {
+            color: var(--main-color-1);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    
+        .logo {
+            order: 2;
+        }
+    
+        .logo svg {
+            fill: var(--main-color-2);
+            width: 100px;
+            left: 1px;
+            padding-top: 20px;
+        }
+    
+        nav a {
+            line-height: 15px;
+        }
+    
+        .menuNav {
+            order: 3;
+            width: 100%;
+            margin: 0;
+        }
+    
+        .logo .svg-logo {
+            fill: yellow;
+        }
+    
+        .menu .svg-github,
+        .menu .svg-twitter,
+        .menu .svg-slack,
+        .menu .svg-open-collective {
+            fill: black;
+            width: 20px;
+        }
+    
+        nav {
+            margin: 5px;
+        }
 
-    .wall {
-        display: none;
-    }
+        .menu {
+            justify-content: space-evenly;
+            padding: 10px;
+            border-radius: 0;
+        }
+    
+        .menu .size-icon {
+            width: 15px;
+            height: auto;
+            filter: var(--main-color-1);
+        }
+    
+        .menuNav ul {
+            display: flex;
+            flex-direction: column;
+            /* Empile les items en colonne */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-    .price {
-        top: 35px;
-        left: 35px;
-        width: 90px;
-        height: 90px;
-        font-weight: bold;
-        font-size: 16px;
-      
+        .menuNav ul li {
+            position: relative;
+            width: 100%;
+        }
+    
+        .menuNav ul li a {
+            display: block;
+            font-size: 1rem;
+            padding: 10px 20px;
+            color: var(--main-color-3);
+            border-radius: 5px;
+            margin-bottom: 5px;
+            text-align: start;
+        }
+    
+        .menuNav ul li:hover>a {
+            background-color: var(--main-color-4);
+            color: var(--main-color-3);
+        }
+    
+        /* Sous-menus masqués par défaut */
+        .menuNav ul li ul {
+            display: none;
+            position: relative; /* Positionner absolument pour les superposer au-dessus des éléments */
+            top: auto;
+            left: 0; /* Positionne le sous-menu à droite de l'élément parent */
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            width: max-content;
+        }
+    
+        /* Affichage des sous-menus au survol */
+        .menuNav ul li:hover>ul {
+            display: block;
+        }
+    
+        /* Ajustements des sous-menus pour les rendre plus lisibles */
+        .menuNav ul li ul li {
+            display: block;
+            width: 100%;
+        }
+    
+        .menuNav ul li ul li a {
+            padding: 10px;
+            color: var(--main-color-3);
+            background-color: transparent;
+            border-radius: 4px;
+            display: block;
+        }
+    
+        .menuNav ul li ul li a:hover {
+            background-color: var(--main-color-4);
+            color: var(--main-color-3);
+        }
+    
+        /* Gérer les sous-sous-menus (affichage latéral) */
+        .menuNav ul li ul li ul {
+            left: 100%; /* Positionne le sous-sous-menu à droite du sous-menu */
+            top: 0;
+            margin-top: 0;
+        }
+    
+        .cat {
+            margin: 0;
+        }
+    
+        .menuNav .home {
+            background-color: yellow;
+            color: var(--main-color-1);
+            border-radius: 4px;
+        }
+    
+        .promo {
+            font-size: 1.2rem;
+        }
+    
+        .wall {
+            display: none;
+        }
+    
+        .price {
+            top: 35px;
+            left: 35px;
+            width: 90px;
+            height: 90px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+    
+        .label {
+            top: 40px;
+            left: 180px;
+            padding: 8px 25px;
+            font-size: 16px;
+            font-weight: bolder;
+        }
+    
+        .selection {
+            flex-direction: column;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .shoeItem {
+            flex: 0 0 calc(50% - 2px);
+        }
+    
+        footer {
+            flex-direction: column;
+        }
+    
+        .footer-logo {
+            width: 100%;
+            height: 100px;
+        }
+    
+        .footer-logo svg {
+            width: 100px;
+            height: auto;
+            margin: 0 auto;
+        }
+    
+        .slogan {
+            width: 100%;
+            height: 100px;
+            font-size: 1.5rem;
+            padding: 10px;
+        }
     }
     
-    .label {
-        top: 40px;
-        left: 180px;
-        padding: 8px 25px;
-        font-size: 16px;
-        font-weight: bolder;
-    }
-    .shoeItem {
-        flex: 0 0 calc(50% - 2px);
-    }
 
-    footer {
-        flex-direction: column;
-    }
-
-    .footer-logo {
-        width: 100%;
-        height: 100px;
-    }
-
-    .footer-logo svg {
-        width: 100px;
-        height: auto;
-        margin: 0 auto;
-    }
-
-    .slogan {
-        width: 100%;
-        height: 100px;
-        font-size: 1.5rem;
-        padding: 10px;
-    }
-}
-
-/*******************************************/
-/*******************************************/
-/*******************************************/
-
-@media (max-width: 600px) {
-
-    body,
-    html {
-        font-size: 14px;
-        padding: 0;
-        margin: 0 auto;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        margin: 0;
-        gap: 0;
-    }
-
-    .menu {
-        order: 1;
-        display: flex;
-        justify-content: space-evenly;
-        width: 100%;
-        background-color: var(--main-color-2);
-        padding: 15px 0;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .menu s {
-        color: var(--main-color-1);
-        font-weight: bold;
-        font-size: 1.2rem;
-    }
-
-    .logo {
-        order: 2;
-    }
-
-    .logo svg {
-        fill: var(--main-color-2);
-        width: 100px;
-        left: 1px;
-        padding-top: 20px;
-    }
-
-    nav a {
-        line-height: 39px;
-    }
-
-    .menuNav {
-        order: 3;
-        width: 100%;
-        margin: 0;
-    }
-
-    .logo .svg-logo {
-        fill: yellow;
-    }
-
-    .menu .svg-github,
-    .menu .svg-twitter,
-    .menu .svg-slack,
-    .menu .svg-open-collective {
-        fill: black;
-        width: 20px;
-    }
-
-    nav {
-        margin: 5px;
-    }
-
-    .menu {
-       
-        justify-content: space-evenly;
-        padding: 10px;
-        border-radius: 0;
-    }
-
-    .menu .size-icon {
-        width: 15px;
-        height: auto;
-        filter: var(--main-color-1);
-    }
-
-    .menuNav ul {
-        display: flex;
-        flex-direction: column;
-    }
-
-
-
-    .cat {
-        margin: 0;
-        height: 35px;
-
-    }
-
-    .menuNav ul {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-    }
-
-
-
-    .menuNav ul li a {
-        font-size: 10px;
-
-        display: block;
-        align-items: end;
-    }
-
-    .menuNav .home {
-        background-color: yellow;
-        border-radius: 4px;
-    }
-
-    .menuNav nav ul>li>ul>li>a {
-        display: none;
-    }
-
-    /*******************************************/
-
-    .promo {
-        font-size: 1.2rem;
-    }
-
-    .wall {
-        display: none;
-    }
-
-    .selection {
-        flex-direction: column;
-        gap: 0;
-        margin: 0;
-        padding: 0;
-    }
-
-    .price {
-
-        top: 20px;
-        left: 35px;
-        width: 60px;
-        height: 60px;
-        font-size: 13px;
-    }
-
-    .label {
-
-        top: 35px;
-        left: 150px;
-        height: 45px;
-        padding-bottom: 10px;
-        font-size: 14px;
-    }
-
-    footer {
-        flex-direction: column;
-    }
-
-    .footer-logo {
-        width: 100%;
-        height: 100px;
-    }
-
-    .footer-logo svg {
-        width: 100px;
-        height: auto;
-        margin: 0 auto;
-    }
-
-    .slogan {
-        width: 100%;
-        height: 100px;
-        font-size: 1.5rem;
-        padding: 10px;
-    }
-}
+    
