@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-# NikeAlaji
-=======
->>>>>>> 9149ce4 (Rebase)
 # Site Nike Fictif
 
 ### Utilisation de Flexbox pour agancer le design
@@ -20,8 +14,3 @@
 - Utiliser les media queries pour créer des styles spécifiques pour les écrans de taille différentes
 - Mobile first
 
-<<<<<<< HEAD
-
-=======
->>>>>>> ef857fe (md)
->>>>>>> 9149ce4 (Rebase)
